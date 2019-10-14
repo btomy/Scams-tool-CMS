@@ -1,6 +1,6 @@
 import React from 'react';
-import QuestionBlock from '../../QuestionBlock';
-import Answers from '../../Answers';
+import QuestionBlock from '../QuestionBlock/QuestionBlock';
+import Answers from '../Answers/Answers';
 import ShowSummary from './ShowSummary';
 
 const StepOne = ({

@@ -1,19 +1,68 @@
-import React from 'react';
+import React, {Component} from 'react'
+import MultiStepForm from "./MultiStepForm";
 
-import './App.css';
+import data from './scams.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-       
-      </header>
-    </div>
-  );
+const API = 'https://hn.algolia.com/api/v1/search?query=';
+//Add api when UAT is ready
+const DEFAULT_QUERY = 'redux';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: data,
+      isLoading: false,
+      error: null,
+      startApp: false
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ isLoading: true });
+    fetch(API + DEFAULT_QUERY)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Something went wrong ...");
+        }
+      })
+      .then(data => this.setState({ isLoading: false }))
+      .catch(error => this.setState({ error, isLoading: false }));
+  }
+
+  _startApp = () => {
+    this.setState({
+      startApp: true
+    })
+  }
+
+  render() {
+    const { data, isLoading, error, startApp } = this.state;
+    console.log(this.state);
+
+    if (error) {
+      return <p>{error.message}</p>;
+    }
+    if (isLoading) {
+      return <p>Loading ...</p>;
+    }
+
+    return (
+      <div className="App">
+        {startApp ? (
+          data && <MultiStepForm data={data} />
+        ) : (
+          <React.Fragment>
+           <h1>{data.Title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: data.Introduction }}></div>
+            <button onClick={this._startApp}>Start</button>
+          </React.Fragment>
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;
