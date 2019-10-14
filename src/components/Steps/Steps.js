@@ -3,7 +3,7 @@ import QuestionBlock from '../QuestionBlock/QuestionBlock';
 import Answers from '../Answers/Answers';
 import ShowSummary from './ShowSummary';
 
-const StepOne = ({
+const Steps = ({
   currentStep,
   isResult,
   question,
@@ -32,4 +32,4 @@ const StepOne = ({
   );
 };
 
-export default StepOne;
+export default Steps;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import StepOne from './components/Steps/StepOne';
+import Steps from './components/Steps/Steps';
 import ToolBar from './components/ToolBar/ToolBar';
 
 class MultiStepForm extends Component {
@@ -145,7 +145,7 @@ class MultiStepForm extends Component {
       <React.Fragment>
 
         <form action="" className="">
-          <StepOne
+          <Steps
             currentStep={currentStep}
             isResult={isResult}
             summary={summary}
