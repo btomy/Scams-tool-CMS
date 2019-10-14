@@ -7,9 +7,9 @@ class ToolBar extends Component {
     let currentStep = this.props.currentStep;
     if (currentStep >= 1) {
       return (
-        <Button className="button-secondary mr-2" click={this.props.previous}>
+        <Button className="button-secondary " click={this.props.previous}>
           <svg
-            className="mr-2"
+            className=""
             width="11"
             height="17"
             xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,6 @@ class ToolBar extends Component {
   }
 
   get nextButton() {
-    let currentStep = this.props.currentStep;
       return (
         <Button className="button" click={this.props.next}>
           Next
@@ -47,27 +46,28 @@ class ToolBar extends Component {
           </svg>
         </Button>
       );
-    return null;
   }
 
-  get submitButton() {
-    let currentStep = this.props.currentStep;
-    if (currentStep > 4) {
+  get restartButton() {
       return (
         <Button click={this.props.handleSubmit} className="button">
-          Submit
+          Restart
         </Button>
       );
-    }
-    return null;
   }
 
   render() {
+    let isResult = this.props.isResult;
     return (
       <React.Fragment>
-        {this.previousButton}
-        {this.nextButton}
-        {this.submitButton}
+        {isResult ? (
+          this.restartButton
+        ) : (
+          <div>
+            {this.previousButton}
+            {this.nextButton}
+          </div>
+        )}
       </React.Fragment>
     );
   }

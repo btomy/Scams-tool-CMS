@@ -110,7 +110,7 @@ class MultiStepForm extends Component {
 
   render() {
     const {data,currentStep,scamsHistory,isResult,currentSelection} = this.state;
-    console.log("state ",data);
+    console.log("state ",this.state);
 
     const FirstQuestionId = data.StartingQuestionId;
     const FirstQuestion = data
@@ -132,10 +132,10 @@ class MultiStepForm extends Component {
         return item.Answers.filter(answer => answer);
       });
 
-    // const summary = isResult ? data['ResultSummary'].filter(
-    //   item => item.Id === scams[currentStep]['NextStepId']
-    // ): null;
-    // console.log(summary);
+    const summary = isResult ? data['ResultSummary'].filter(
+      item => item.Id === currentSelection['NextStepId']
+    )[0]: null;
+    console.log(summary);
 
     const Question = currentStep > 0 ? OtherQuestion : FirstQuestion;
     const Answers =
@@ -143,30 +143,24 @@ class MultiStepForm extends Component {
 
     return (
       <React.Fragment>
-        
-        <form action="" className="rich-content line-limit-width">
+
+        <form action="" className="">
           <StepOne
             currentStep={currentStep}
             isResult={isResult}
-            summary={"summary"}
+            summary={summary}
             question={Question}
             results={Answers}
             currentSelection={currentSelection}
             handleChange={this._handleChange}
           />
-          {/* <StepTwo
-            currentStep={currentStep}
-            question={SecondQuestion}
-            results={SecondQuestionAnswers[0]}
-            selected={scams[0]["selected"]}
-            handleChange={this._handleChange}
-          /> */}
 
-          <div className="button-group flex pv-4">
+          <div className="">
             <ToolBar
               currentStep={currentStep}
-              next={this._next}
-              previous={this._prev}
+              next= {this._next}
+              previous= {this._prev}
+              isResult= {isResult}
             />
           </div>
         </form>

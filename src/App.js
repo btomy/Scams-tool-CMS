@@ -40,8 +40,7 @@ class App extends Component {
 
   render() {
     const { data, isLoading, error, startApp } = this.state;
-    console.log(this.state);
-
+  
     if (error) {
       return <p>{error.message}</p>;
     }

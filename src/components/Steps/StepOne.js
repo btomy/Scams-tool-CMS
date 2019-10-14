@@ -19,7 +19,7 @@ const StepOne = ({
       ) : (
         <div>
           <QuestionBlock question={question} />
-          <fieldset className="b-none p-0 m-0 mb-4">
+          <fieldset className="">
             <Answers
               results={results}
               currentSelection={currentSelection}

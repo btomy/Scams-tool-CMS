@@ -9,8 +9,8 @@ const Answers = ({ results, currentSelection, handleChange }) => {
     const currentChecked = currentSelection ? currentSelection.AnswerCode: null;
     const resultsBlock = results.map((result, id) => {
       return (
-        <div className="block mv-2" key={id}>
-          <div className="checkbox">
+        <div className="" key={id}>
+          <div className="">
             <FormRadioCheck
               type="radio"
               id={result.AnswerCode}
@@ -22,7 +22,7 @@ const Answers = ({ results, currentSelection, handleChange }) => {
             />
             <FormLabel
               htmlFor={result.AnswerCode}
-              classNames="ml-2 lh-2 semi-bold"
+              classNames=""
             >
               {result.Answer}
             </FormLabel>
