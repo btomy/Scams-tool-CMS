@@ -161,6 +161,7 @@ class MultiStepForm extends Component {
               next= {this._next}
               previous= {this._prev}
               isResult= {isResult}
+              restart={this.props.restart}
             />
           </div>
         </form>

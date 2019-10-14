@@ -50,7 +50,7 @@ class ToolBar extends Component {
 
   get restartButton() {
       return (
-        <Button click={this.props.handleSubmit} className="button">
+        <Button click={this.props.restart} className="button">
           Restart
         </Button>
       );

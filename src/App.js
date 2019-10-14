@@ -38,6 +38,12 @@ class App extends Component {
     })
   }
 
+  _reStartApp = () => {
+    this.setState({
+      startApp: false
+    })
+  }
+
   render() {
     const { data, isLoading, error, startApp } = this.state;
   
@@ -51,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         {startApp ? (
-          data && <MultiStepForm data={data} />
+          data && <MultiStepForm data={data} restart={this._reStartApp} />
         ) : (
           <React.Fragment>
            <h1>{data.Title}</h1>
