@@ -155,7 +155,7 @@ class MultiStepForm extends Component {
             handleChange={this._handleChange}
           />
 
-          <div className="">
+          <div className="btn-wrapper">
             <ToolBar
               currentStep={currentStep}
               next= {this._next}

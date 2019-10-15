@@ -1,1 +1,182 @@
 @import "https://www.citizensadvice.org.uk/Static/build/css/site.css";
+
+.button,.button-secondary,.button-tertiary {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: .125rem;
+    border: none;
+    color: #004b88;
+    cursor: pointer;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-family: 'Open Sans', helvetica, 'helvetica neue', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    outline: none;
+    padding: .75rem 1rem
+}
+
+
+.button {
+    background-color: #81cec6;
+    -webkit-box-shadow: inset 0 0 0 .125rem #81cec6;
+    box-shadow: inset 0 0 0 .125rem #81cec6
+}
+
+.button:hover {
+    background-color: #5cc0b5;
+    -webkit-box-shadow: inset 0 0 0 .125rem #5cc0b5;
+    box-shadow: inset 0 0 0 .125rem #5cc0b5;
+    border: none;
+}
+
+.button:focus {
+    -webkit-box-shadow: inset 0 0 0 .125rem #fcbb69;
+    box-shadow: inset 0 0 0 .125rem #fcbb69;
+    border: none;
+}
+
+.button-secondary {
+    background-color: #fff;
+    -webkit-box-shadow: inset 0 0 0 .125rem #81cec6;
+    box-shadow: inset 0 0 0 .125rem #81cec6;
+}
+
+.button-secondary:hover {
+    background-color: #eaf9f7;
+    -webkit-box-shadow: inset 0 0 0 .125rem #5cc0b5;
+    box-shadow: inset 0 0 0 .125rem #5cc0b5;
+    border: none;
+}
+
+.button-secondary:focus {
+    -webkit-box-shadow: inset 0 0 0 .125rem #fcbb69;
+    box-shadow: inset 0 0 0 .125rem #fcbb69;
+    border: none;
+}
+
+.button-tertiary {
+    -webkit-box-shadow: inset 0 0 0 .063rem #229cff;
+    box-shadow: inset 0 0 0 .063rem #229cff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: .5rem
+}
+
+.button-tertiary:hover {
+    background-color: #caeaff
+}
+
+.button-tertiary:focus {
+    -webkit-box-shadow: inset 0 0 0 .125rem #fcbb69;
+    box-shadow: inset 0 0 0 .125rem #fcbb69
+}
+
+.nxt-btn svg{
+    margin-left: .5rem;
+}
+.prev-btn svg{
+    margin-right: .5rem;
+}
+.App{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn-wrapper{
+    padding: 1rem 0 ;
+    display: flex ;
+}
+
+.input-wrapper{
+    display: flex;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.checkbox{
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    color: #000;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-family: 'Open Sans', helvetica, 'helvetica neue', arial, sans-serif;
+    font-weight: 700;
+    margin: 0rem 0rem 0rem .25rem;
+    padding: .75rem 1rem;
+    position: relative;
+    z-index: 100;
+}
+
+.checkbox label{
+    line-height: 24px;
+    font-weight: 600;
+    margin-left: .5rem;
+    cursor: pointer;
+}
+.checkbox input{
+    margin: 0;
+}
+
+input[type=checkbox]+label{
+    margin: 0;
+}
+
+[type="checkbox"]{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.radio,.checkbox {
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    color: #000;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-family: 'Open Sans', helvetica, 'helvetica neue', arial, sans-serif;
+    font-weight: 700;
+    margin: 0rem 0rem 0rem .25rem;
+    padding: .75rem 1rem;
+    position: relative;
+    z-index: 100
+}
+
+.radio input[type="radio"]::before,.radio input[type="checkbox"]::before,.checkbox input[type="radio"]::before,.checkbox input[type="checkbox"]::before {
+    background-color: #f2f2f2;
+    border-radius: .125rem;
+    -webkit-box-shadow: inset 0 0 0 .125rem #dfdfdf;
+    box-shadow: inset 0 0 0 .125rem #dfdfdf;
+    content: '';
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    border: none;
+}
+
+.radio input[type="radio"]:checked::before,.radio input[type="checkbox"]:checked::before,.checkbox input[type="radio"]:checked::before,.checkbox input[type="checkbox"]:checked::before {
+    background-color: #caeaff;
+    -webkit-box-shadow: inset 0 0 0 .125rem #229cff;
+    box-shadow: inset 0 0 0 .125rem #229cff
+}
+
+.radio input[type="radio"]:hover::before,.radio input[type="checkbox"]:hover::before,.checkbox input[type="radio"]:hover::before,.checkbox input[type="checkbox"]:hover::before {
+    -webkit-box-shadow: inset 0 0 0 .125rem #9f9f9f;
+    box-shadow: inset 0 0 0 .125rem #9f9f9f
+}
+
+.radio input[type="radio"]:focus::before,.radio input[type="checkbox"]:focus::before,.checkbox input[type="radio"]:focus::before,.checkbox input[type="checkbox"]:focus::before {
+    -webkit-box-shadow: inset 0 0 0 .125rem #fcbb69;
+    box-shadow: inset 0 0 0 .125rem #fcbb69
+}
