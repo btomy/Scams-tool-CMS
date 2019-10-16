@@ -21,11 +21,11 @@ class MultiStepForm extends Component {
     );
   };
 
-  componentDidUpdate(prevProps, prevState) {
-      if (this.state.showSnackbar && !prevState.showSnackbar) {
-        this.setState({ showSnackbar: false })
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //     if (this.state.currentSelection) {
+  //       this.setState({ currentSelection: null })
+  //   }
+  // }
 //   _addtoArray = (arr, obj) => {
 //     const currentArrLength = arr.length;
 //     const { currentStep } = this.state;
@@ -146,8 +146,8 @@ class MultiStepForm extends Component {
     const Answers =
       currentStep > 0 ? OtherQuestionAnswers[0] : FirstQuestionAnswers[0];
 
-    const ProgressBarValue = data && Question[0]["Percentage"];
-
+    const ProgressBarValue = data && Question[0] ? Question[0]["Percentage"] : null;
+  
     return (
       <React.Fragment>
 

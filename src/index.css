@@ -204,3 +204,7 @@ input[type=checkbox]+label{
     -webkit-box-shadow: inset 0 0 0 .125rem #fcbb69;
     box-shadow: inset 0 0 0 .125rem #fcbb69
 }
+
+button:disabled, button:disabled:active, button:disabled:hover, button:disabled:visited{
+    box-shadow: none;
+}

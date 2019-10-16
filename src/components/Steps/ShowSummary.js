@@ -37,7 +37,7 @@ class ShowSummary extends Component{
           className={`revealable__content ${slideHidden}`}
           id="revealable-1">
           <p>You should ask the garage to fix any faults that:</p>
-          <ul>``
+          <ul>
             <li>weren’t repaired properly</li>
             <li>weren’t correctly found</li>
             <li>didn’t exist before you took the car to the garage</li>
