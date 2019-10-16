@@ -1,15 +1,30 @@
-import React from "react";
+import React, { Component } from 'react';
 
-const ShowSummary = ({ summary }) => {
+class ShowSummary extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      showRevealable : false
+    }
+  }
 
-  const test = "slide--hidden";
-  return (
-    <React.Fragment>
-      <fieldset className="">
-        <h3 dangerouslySetInnerHTML={{ __html: summary.ResultTitle }}></h3>
+  showRevealable = (e) => {
+    this.setState({
+      showRevealable: !this.state.showRevealable
+    })
+  }
+
+  render() {
+    const { showRevealable } = this.state;
+    const slideHidden = showRevealable ? "" : "slide--hidden";
+    const {summary} = this.props;
+    return (
+      <React.Fragment>
+        <fieldset className="">
+          <h3 dangerouslySetInnerHTML={{ __html: summary.ResultTitle }}></h3>
         <div dangerouslySetInnerHTML={{ __html: summary.ResultText }}></div>
       </fieldset>
-      <section className="revealable revealable--setup">
+      <section className="revealable revealable--setup" onClick={this.showRevealable}>
         <h2
           id="h-if-the-repair-didn-t-work-or-it-created-a-new-problem"
           className="js-ref revealable__heading"
@@ -19,10 +34,10 @@ const ShowSummary = ({ summary }) => {
           If the repair didn’t work or it created a new problem
         </h2>
         <div
-          className={`revealable__content ${test}`}
+          className={`revealable__content ${slideHidden}`}
           id="revealable-1">
           <p>You should ask the garage to fix any faults that:</p>
-          <ul>
+          <ul>``
             <li>weren’t repaired properly</li>
             <li>weren’t correctly found</li>
             <li>didn’t exist before you took the car to the garage</li>
@@ -79,7 +94,7 @@ const ShowSummary = ({ summary }) => {
             Next steps
           </h3>
           <p>
-            You should <a>take further action</a> if
+            You should take further action if
             the garage refuses to make the repairs and you can’t reach an
             agreement.
           </p>
@@ -88,6 +103,7 @@ const ShowSummary = ({ summary }) => {
       </section>
     </React.Fragment>
   );
+  }
 };
 
 export default ShowSummary;

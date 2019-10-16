@@ -3,6 +3,8 @@ import QuestionBlock from '../QuestionBlock/QuestionBlock';
 import Answers from '../Answers/Answers';
 import ShowSummary from './ShowSummary';
 
+import ProgressBar from 'react-bootstrap/ProgressBar'
+
 const Steps = ({
   currentStep,
   isResult,
@@ -10,7 +12,8 @@ const Steps = ({
   summary,
   results,
   currentSelection,
-  handleChange
+  handleChange,
+  ProgressBarValue
 }) => {
   return (
     <React.Fragment>
@@ -18,6 +21,7 @@ const Steps = ({
         <ShowSummary summary={summary}/>
       ) : (
         <div>
+          <ProgressBar variant="success" now={ProgressBarValue} label={`${ProgressBarValue}%`} /> 
           <QuestionBlock question={question} />
           <fieldset className="">
             <Answers

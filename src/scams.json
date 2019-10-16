@@ -1,307 +1,321 @@
 {
-    "Title": "Scams Tool Prototype",
-    "Introduction": "\u003cp class=\"first-paragraph\"\u003eThis is the intro to the Scams Tools - anything could happen!\u003c/p\u003e\n\u003cp\u003eWe\u0027ll use your answers to the questions to give you advice on:\u003cbr /\u003e\u003cbr /\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003ewhether something might be a scam\u003c/li\u003e\n\u003cli\u003ewhat to do next\u003c/li\u003e\n\u003cli\u003ereporting a scam\u003c/li\u003e\n\u003c/ul\u003e",
-    "StartingQuestionId": "Q1",
-    "Questions": [
-      {
-        "Id": "Q1",
-        "QuestionText": "Where did you come across the possible scam?",
-        "QuestionType": "SingleSelect",
-        "HelpInfo": "Which type of media?",
-        "ValidationText": "What???",
-        "Answers": [
-          {
-            "Answer": "In an email",
-            "AnswerCode": "email",
-            "NameInput": "EMAIL",
-            "NextStepId": "Q-email"
-          },
-          {
-            "Answer": "Over the phone",
-            "AnswerCode": "phone",
-            "NameInput": "phone",
-            "NextStepId": "Q-phone"
-          },
-          {
-            "Answer": "On a website",
-            "AnswerCode": "website",
-            "NameInput": "website",
-            "NextStepId": "Q-website"
-          },
-          {
-            "Answer": "Via social media",
-            "AnswerCode": "social",
-            "NameInput": "social",
-            "NextStepId": "Q-social"
-          },
-          {
-            "Answer": "A text message",
-            "AnswerCode": "text",
-            "NameInput": "text",
-            "NextStepId": "Q-text"
-          },
-          {
-            "Answer": "Through the post",
-            "AnswerCode": "post",
-            "NameInput": "post",
-            "NextStepId": "Q-post"
-          },
-          {
-            "Answer": "On the doorstep",
-            "AnswerCode": "doorstep",
-            "NameInput": "doorstep",
-            "NextStepId": "Q-door"
-          },
-          {
-            "Answer": "Money has gone",
-            "AnswerCode": "money",
-            "NameInput": "money",
-            "NextStepId": "Q-money"
-          }
-        ]
-      },
-      {
-        "Id": "Q-email",
-        "QuestionText": "Who was the email from?",
-        "QuestionType": "SingleSelect",
-        "HelpInfo": null,
-        "ValidationText": null,
-        "Answers": [
-          {
-            "Answer": "Tax collects (HMRC)",
-            "AnswerCode": "tax",
-            "NameInput": "tax",
-            "NextStepId": "Q-tax-first"
-          },
-          {
-            "Answer": "TV licence",
-            "AnswerCode": "tv",
-            "NameInput": "tv",
-            "NextStepId": "Q-tv-first"
-          },
-          {
-            "Answer": "Someone on a dating website",
-            "AnswerCode": "dating",
-            "NameInput": "dating",
-            "NextStepId": "Q-dating-first"
-          },
-          {
-            "Answer": "Energy company",
-            "AnswerCode": "energy",
-            "NameInput": "energy",
-            "NextStepId": "Q-energy-first"
-          },
-          {
-            "Answer": "A bank",
-            "AnswerCode": "bank",
-            "NameInput": "bank",
-            "NextStepId": "Q-your-bank"
-          },
-          {
-            "Answer": "An investment company",
-            "AnswerCode": "investment",
-            "NameInput": "investmant",
-            "NextStepId": "Q-investment-first"
-          },
-          {
-            "Answer": "DVLA",
-            "AnswerCode": "dvla",
-            "NameInput": "dvla",
-            "NextStepId": "Q-dvla"
-          },
-          {
-            "Answer": "A business or a trader",
-            "AnswerCode": "business",
-            "NameInput": "business",
-            "NextStepId": "Q-business-before"
-          },
-          {
-            "Answer": "PayPal",
-            "AnswerCode": "paypal",
-            "NameInput": "paypal",
-            "NextStepId": "Q-paypal"
-          },
-          {
-            "Answer": "Someone else",
-            "AnswerCode": "someone",
-            "NameInput": "someone",
-            "NextStepId": "Q-someone"
-          }
-        ]
-      },
-      {
-        "Id": "Q-phone",
-        "QuestionText": "Who was the phone call from?",
-        "QuestionType": "MultiSelect",
-        "HelpInfo": null,
-        "ValidationText": null,
-        "Answers": [
-          {
-            "Answer": "Tax collectors e.g. HMRC",
-            "AnswerCode": "hmrc",
-            "NameInput": "hmrc",
-            "NextStepId": "R999"
-          },
-          {
-            "Answer": "Your phone or internet provider",
-            "AnswerCode": "provider",
-            "NameInput": "provider",
-            "NextStepId": "R999"
-          },
-          {
-            "Answer": "A bank",
-            "AnswerCode": "bank",
-            "NameInput": "bank",
-            "NextStepId": "R999"
-          }
-        ]
-      },
-      {
-        "Id": "Q-tax-first",
-        "QuestionText": "Did they contact you first, or did you contact them?",
-        "QuestionType": "SingleSelect",
-        "HelpInfo": null,
-        "ValidationText": null,
-        "Answers": [
-          {
-            "Answer": "I contacted them first",
-            "AnswerCode": "me",
-            "NameInput": "me",
-            "NextStepId": "R-HMRC"
-          },
-          {
-            "Answer": "They contacted me first",
-            "AnswerCode": "them",
-            "NameInput": "them",
-            "NextStepId": "R-OhNo"
-          }
-        ]
-      },
-      {
-        "Id": "Q-dating-first",
-        "QuestionText": "Did they contact you first, or did you contact them?",
-        "QuestionType": "SingleSelect",
-        "HelpInfo": null,
-        "ValidationText": null,
-        "Answers": [
-          {
-            "Answer": "I contacted them first",
-            "AnswerCode": "me",
-            "NameInput": "me",
-            "NextStepId": "R999"
-          },
-          {
-            "Answer": "They contacted me first",
-            "AnswerCode": "them",
-            "NameInput": "them",
-            "NextStepId": "R999"
-          }
-        ]
-      },
-      {
-        "Id": "Q-investment-first",
-        "QuestionText": "Had you heard of this investment company before?",
-        "QuestionType": "MultiSelect",
-        "HelpInfo": null,
-        "ValidationText": null,
-        "Answers": [
-          {
-            "Answer": "Yes",
-            "AnswerCode": "yes",
-            "NameInput": "yes",
-            "NextStepId": "R999"
-          },
-          {
-            "Answer": "No",
-            "AnswerCode": "no",
-            "NameInput": "no",
-            "NextStepId": "R999"
-          }
-        ]
-      },
-      {
-        "Id": "Q-your-bank",
-        "QuestionText": "Was it your bank?",
-        "QuestionType": "SingleSelect",
-        "HelpInfo": null,
-        "ValidationText": null,
-        "Answers": [
-          {
-            "Answer": "Yes",
-            "AnswerCode": "yes",
-            "NameInput": "yes",
-            "NextStepId": "R999"
-          },
-          {
-            "Answer": "No",
-            "AnswerCode": "no",
-            "NameInput": "no",
-            "NextStepId": "R999"
-          }
-        ]
-      },
-      {
-        "Id": "Q-",
-        "QuestionText": "What do you want for tea?",
-        "QuestionType": "MultiSelect",
-        "HelpInfo": null,
-        "ValidationText": null,
-        "Answers": [
-          {
-            "Answer": "Chips",
-            "AnswerCode": "chips",
-            "NameInput": "chips",
-            "NextStepId": "Q-Afters"
-          },
-          {
-            "Answer": "Pies",
-            "AnswerCode": "pies",
-            "NameInput": "pies",
-            "NextStepId": "Q-AFTERS"
-          },
-          {
-            "Answer": "Pizza (any)",
-            "AnswerCode": "pizza",
-            "NameInput": "pizza",
-            "NextStepId": "Q-afters"
-          }
-        ]
-      }
-    ],
-    "ResultSummary": [
-      {
-        "Id": "R1",
-        "ResultTitle": "This is a test",
-        "ResultText": "\u003cp\u003easdhlasd jasdklf\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003efgfsdgsdfg\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003esdfgsdfgsdfg\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003edfsgsgsdfg\u003c/li\u003e\n\u003cli\u003esdfgsdfg\u003c/li\u003e\n\u003cli\u003esdfgfdg\u003c/li\u003e\n\u003c/ul\u003e",
-        "Revealables": [],
-        "ResultFooter": null
-      },
-      {
-        "Id": "R999",
-        "ResultTitle": "Dead End",
-        "ResultText": "\u003cp\u003eHi,\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e You\u0027ve reached a dead end.\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003ePlease refresh the current page to start the questions all over again.\u003c/p\u003e",
-        "Revealables": [],
-        "ResultFooter": null
-      },
-      {
-        "Id": "R-common",
-        "ResultTitle": "Common scams",
-        "ResultText": "\u003cp\u003e\u003cstrong\u003eAdvice on:\u003c/strong\u003e Common scam tactics, they contacted you first so watch out for emails you weren\u0027t expecting, don\u0027t click links or download anything, never give away money or your personal details if you\u0027re not sure who they are.\u003c/p\u003e",
-        "Revealables": [],
-        "ResultFooter": null
-      },
-      {
-        "Id": "R-HMRC",
-        "ResultTitle": "HMRC Scams",
-        "ResultText": "\u003cp\u003eAdvice on: HMRC scams, never give away personal details if you\u0027re not sure who someone is\u003c/p\u003e",
-        "Revealables": [
-          {
-            "Title": "Revealable title",
-            "RevealableBody": "\u003cp\u003etext goes here.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eaaaa\u003c/li\u003e\n\u003cli\u003ebbbbb\u003c/li\u003e\n\u003cli\u003ecccc\u003c/li\u003e\n\u003cli\u003edddddddddddddd\u003c/li\u003e\n\u003c/ul\u003e"
-          }
-        ],
-        "ResultFooter": "\u003cp\u003eSome more info at the bottom.\u003c/p\u003e"
-      }
-    ]
-  }
-  
+  "Title": "Scams Tool Prototype",
+  "Introduction": "\u003cp class=\"first-paragraph\"\u003eThis is the intro to the Scams Tools - anything could happen!\u003c/p\u003e\n\u003cp\u003eWe\u0027ll use your answers to the questions to give you advice on:\u003cbr /\u003e\u003cbr /\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003ewhether something might be a scam\u003c/li\u003e\n\u003cli\u003ewhat to do next\u003c/li\u003e\n\u003cli\u003ereporting a scam\u003c/li\u003e\n\u003c/ul\u003e",
+  "StartingQuestionId": "Q1",
+  "ReportingFormUrl": "https://ssl.datamotion.com/form.aspx?co=3438\u0026frm=general\u0026to=flare.fromforms",
+  "Questions": [
+    {
+      "Id": "Q1",
+      "QuestionText": "Where did you come across the possible scam?",
+      "QuestionType": "SingleSelect",
+      "HelpInfo": "Which type of media?",
+      "ValidationText": "What???",
+      "Percentage": 33,
+      "Answers": [
+        {
+          "Answer": "In an email",
+          "AnswerCode": "email",
+          "NameInput": "EMAIL",
+          "NextStepId": "Q-email"
+        },
+        {
+          "Answer": "Over the phone",
+          "AnswerCode": "phone",
+          "NameInput": "phone",
+          "NextStepId": "Q-phone"
+        },
+        {
+          "Answer": "On a website",
+          "AnswerCode": "website",
+          "NameInput": "website",
+          "NextStepId": "Q-website"
+        },
+        {
+          "Answer": "Via social media",
+          "AnswerCode": "social",
+          "NameInput": "social",
+          "NextStepId": "Q-social"
+        },
+        {
+          "Answer": "A text message",
+          "AnswerCode": "text",
+          "NameInput": "text",
+          "NextStepId": "Q-text"
+        },
+        {
+          "Answer": "Through the post",
+          "AnswerCode": "post",
+          "NameInput": "post",
+          "NextStepId": "Q-post"
+        },
+        {
+          "Answer": "On the doorstep",
+          "AnswerCode": "doorstep",
+          "NameInput": "doorstep",
+          "NextStepId": "Q-door"
+        },
+        {
+          "Answer": "Money has gone",
+          "AnswerCode": "money",
+          "NameInput": "money",
+          "NextStepId": "Q-money"
+        }
+      ]
+    },
+    {
+      "Id": "Q-email",
+      "QuestionText": "Who was the email from?",
+      "QuestionType": "SingleSelect",
+      "HelpInfo": null,
+      "ValidationText": null,
+      "Percentage": 66,
+      "Answers": [
+        {
+          "Answer": "Tax collects (HMRC)",
+          "AnswerCode": "tax",
+          "NameInput": "tax",
+          "NextStepId": "Q-tax-first"
+        },
+        {
+          "Answer": "TV licence",
+          "AnswerCode": "tv",
+          "NameInput": "tv",
+          "NextStepId": "Q-tv-first"
+        },
+        {
+          "Answer": "Someone on a dating website",
+          "AnswerCode": "dating",
+          "NameInput": "dating",
+          "NextStepId": "Q-dating-first"
+        },
+        {
+          "Answer": "Energy company",
+          "AnswerCode": "energy",
+          "NameInput": "energy",
+          "NextStepId": "Q-energy-first"
+        },
+        {
+          "Answer": "A bank",
+          "AnswerCode": "bank",
+          "NameInput": "bank",
+          "NextStepId": "Q-your-bank"
+        },
+        {
+          "Answer": "An investment company",
+          "AnswerCode": "investment",
+          "NameInput": "investmant",
+          "NextStepId": "Q-investment-first"
+        },
+        {
+          "Answer": "DVLA",
+          "AnswerCode": "dvla",
+          "NameInput": "dvla",
+          "NextStepId": "Q-dvla"
+        },
+        {
+          "Answer": "A business or a trader",
+          "AnswerCode": "business",
+          "NameInput": "business",
+          "NextStepId": "Q-business-before"
+        },
+        {
+          "Answer": "PayPal",
+          "AnswerCode": "paypal",
+          "NameInput": "paypal",
+          "NextStepId": "Q-paypal"
+        },
+        {
+          "Answer": "Someone else",
+          "AnswerCode": "someone",
+          "NameInput": "someone",
+          "NextStepId": "Q-someone"
+        }
+      ]
+    },
+    {
+      "Id": "Q-phone",
+      "QuestionText": "Who was the phone call from?",
+      "QuestionType": "MultiSelect",
+      "HelpInfo": null,
+      "ValidationText": null,
+      "Percentage": 100,
+      "Answers": [
+        {
+          "Answer": "Tax collectors e.g. HMRC",
+          "AnswerCode": "hmrc",
+          "NameInput": "hmrc",
+          "NextStepId": "R999"
+        },
+        {
+          "Answer": "Your phone or internet provider",
+          "AnswerCode": "provider",
+          "NameInput": "provider",
+          "NextStepId": "R999"
+        },
+        {
+          "Answer": "A bank",
+          "AnswerCode": "bank",
+          "NameInput": "bank",
+          "NextStepId": "R999"
+        }
+      ]
+    },
+    {
+      "Id": "Q-tax-first",
+      "QuestionText": "Did they contact you first, or did you contact them?",
+      "QuestionType": "SingleSelect",
+      "HelpInfo": null,
+      "ValidationText": null,
+      "Percentage": 100,
+      "Answers": [
+        {
+          "Answer": "I contacted them first",
+          "AnswerCode": "me",
+          "NameInput": "me",
+          "NextStepId": "R-HMRC"
+        },
+        {
+          "Answer": "They contacted me first",
+          "AnswerCode": "them",
+          "NameInput": "them",
+          "NextStepId": "R-OhNo"
+        }
+      ]
+    },
+    {
+      "Id": "Q-tv-first",
+      "QuestionText": "Did they contact you first, or did you contact them?",
+      "QuestionType": "SingleSelect",
+      "HelpInfo": null,
+      "ValidationText": null,
+      "Percentage": 100,
+      "Answers": [
+        {
+          "Answer": "I contacted them first",
+          "AnswerCode": "me",
+          "NameInput": "me",
+          "NextStepId": "R-HMRC"
+        },
+        {
+          "Answer": "They contacted me first",
+          "AnswerCode": "them",
+          "NameInput": "them",
+          "NextStepId": "R-OhNo"
+        }
+      ]
+    },
+    {
+      "Id": "Q-dating-first",
+      "QuestionText": "Did they contact you first, or did you contact them?",
+      "QuestionType": "SingleSelect",
+      "HelpInfo": null,
+      "ValidationText": null,
+      "Percentage": 100,
+      "Answers": [
+        {
+          "Answer": "I contacted them first",
+          "AnswerCode": "me",
+          "NameInput": "me",
+          "NextStepId": "R999"
+        },
+        {
+          "Answer": "They contacted me first",
+          "AnswerCode": "them",
+          "NameInput": "them",
+          "NextStepId": "R999"
+        }
+      ]
+    },
+    {
+      "Id": "Q-investment-first",
+      "QuestionText": "Had you heard of this investment company before?",
+      "QuestionType": "MultiSelect",
+      "HelpInfo": null,
+      "ValidationText": null,
+      "Percentage": 100,
+      "Answers": [
+        {
+          "Answer": "Yes",
+          "AnswerCode": "yes",
+          "NameInput": "yes",
+          "NextStepId": "R999"
+        },
+        {
+          "Answer": "No",
+          "AnswerCode": "no",
+          "NameInput": "no",
+          "NextStepId": "R999"
+        }
+      ]
+    },
+    {
+      "Id": "Q-your-bank",
+      "QuestionText": "Was it your bank?",
+      "QuestionType": "SingleSelect",
+      "HelpInfo": null,
+      "ValidationText": null,
+      "Percentage": 100,
+      "Answers": [
+        {
+          "Answer": "Yes",
+          "AnswerCode": "yes",
+          "NameInput": "yes",
+          "NextStepId": "R999"
+        },
+        {
+          "Answer": "No",
+          "AnswerCode": "no",
+          "NameInput": "no",
+          "NextStepId": "R999"
+        }
+      ]
+    }
+  ],
+  "ResultSummary": [
+    {
+      "Id": "R1",
+      "ResultTitle": "This is a test",
+      "ResultText": "\u003cp\u003easdhlasd jasdklf\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003efgfsdgsdfg\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003esdfgsdfgsdfg\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003edfsgsgsdfg\u003c/li\u003e\n\u003cli\u003esdfgsdfg\u003c/li\u003e\n\u003cli\u003esdfgfdg\u003c/li\u003e\n\u003c/ul\u003e",
+      "Revealables": [],
+      "SecondResultTitle": null,
+      "SecondResultText": null,
+      "SecondRevealables": [],
+      "ResultFooter": null
+    },
+    {
+      "Id": "R999",
+      "ResultTitle": "Dead End",
+      "ResultText": "\u003cp\u003eHi,\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e You\u0027ve reached a dead end.\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003ePlease refresh the current page to start the questions all over again.\u003c/p\u003e",
+      "Revealables": [],
+      "SecondResultTitle": null,
+      "SecondResultText": null,
+      "SecondRevealables": [],
+      "ResultFooter": null
+    },
+    {
+      "Id": "R-common",
+      "ResultTitle": "Common scams",
+      "ResultText": "\u003cp\u003e\u003cstrong\u003eAdvice on:\u003c/strong\u003e Common scam tactics, they contacted you first so watch out for emails you weren\u0027t expecting, don\u0027t click links or download anything, never give away money or your personal details if you\u0027re not sure who they are.\u003c/p\u003e",
+      "Revealables": [],
+      "SecondResultTitle": null,
+      "SecondResultText": null,
+      "SecondRevealables": [],
+      "ResultFooter": null
+    },
+    {
+      "Id": "R-HMRC",
+      "ResultTitle": "HMRC Scams",
+      "ResultText": "\u003cp\u003eAdvice on: HMRC scams, never give away personal details if you\u0027re not sure who someone is\u003c/p\u003e",
+      "Revealables": [
+        {
+          "Title": "Revealable title",
+          "RevealableBody": "\u003cp\u003etext goes here.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eaaaa\u003c/li\u003e\n\u003cli\u003ebbbbb\u003c/li\u003e\n\u003cli\u003ecccc\u003c/li\u003e\n\u003cli\u003edddddddddddddd\u003c/li\u003e\n\u003c/ul\u003e"
+        }
+      ],
+      "SecondResultTitle": null,
+      "SecondResultText": null,
+      "SecondRevealables": [],
+      "ResultFooter": "\u003cp\u003eSome more info at the bottom.\u003c/p\u003e"
+    }
+  ]
+}

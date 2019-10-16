@@ -21,6 +21,11 @@ class MultiStepForm extends Component {
     );
   };
 
+  componentDidUpdate(prevProps, prevState) {
+      if (this.state.showSnackbar && !prevState.showSnackbar) {
+        this.setState({ showSnackbar: false })
+    }
+  }
 //   _addtoArray = (arr, obj) => {
 //     const currentArrLength = arr.length;
 //     const { currentStep } = this.state;
@@ -59,7 +64,7 @@ class MultiStepForm extends Component {
   };
 
   _handleChange = (e, data) => {
-    const { currentStep, scamsHistory } = this.state;
+    //const { currentStep, scamsHistory } = this.state;
     //const isResult = this._checkIsResult(data);
     //console.log('data ', data);
     //const scamsArray = this._addtoArray(scams, data);
@@ -90,12 +95,12 @@ class MultiStepForm extends Component {
         scamsHistory: [...scamsHistory, currentSelection]
       });
     } else {
-      //show validation
+      console.log("show Validation")
     }
   };
 
   _prev = e => {
-    const { currentSelection, scamsHistory } = this.state;
+    const { scamsHistory } = this.state;
     let currentStep = this.state.currentStep - 1;
     console.log("Hist", scamsHistory);
     this.setState({
@@ -135,11 +140,13 @@ class MultiStepForm extends Component {
     const summary = isResult ? data['ResultSummary'].filter(
       item => item.Id === currentSelection['NextStepId']
     )[0]: null;
-    console.log(summary);
+    
 
     const Question = currentStep > 0 ? OtherQuestion : FirstQuestion;
     const Answers =
       currentStep > 0 ? OtherQuestionAnswers[0] : FirstQuestionAnswers[0];
+
+    const ProgressBarValue = data && Question[0]["Percentage"];
 
     return (
       <React.Fragment>
@@ -153,6 +160,7 @@ class MultiStepForm extends Component {
             results={Answers}
             currentSelection={currentSelection}
             handleChange={this._handleChange}
+            ProgressBarValue={ProgressBarValue}
           />
 
           <div className="btn-wrapper">
