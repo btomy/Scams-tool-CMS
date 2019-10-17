@@ -15,45 +15,6 @@ class MultiStepForm extends Component {
     };
   }
 
-  removeDuplicates = (array, key) => {
-    return array.filter(
-      (obj, index, self) => index === self.findIndex(el => el[key] === obj[key])
-    );
-  };
-
-  // componentDidUpdate(prevProps, prevState) {
-  //     if (this.state.currentSelection) {
-  //       this.setState({ currentSelection: null })
-  //   }
-  // }
-//   _addtoArray = (arr, obj) => {
-//     const currentArrLength = arr.length;
-//     const { currentStep } = this.state;
-//     const found = arr.some(el => el.selected === obj.selected);
-
-//     if (currentArrLength === 0) {
-//       arr.push({
-//         selected: obj.AnswerCode,
-//         NextStepId: obj.NextStepId
-//       });
-//     } else if (!found) {
-//       if (currentStep === currentArrLength) {
-//         arr.unshift({
-//           selected: obj.AnswerCode,
-//           NextStepId: obj.NextStepId
-//         });
-//         arr.pop();
-//       } else {
-//         arr.push({
-//           selected: obj.AnswerCode,
-//           NextStepId: obj.NextStepId
-//         });
-//       }
-//     }
-
-//     return arr;
-//   };
-
   _checkIsResult = test => {
     const check = "R";
     let result = false;
@@ -64,45 +25,47 @@ class MultiStepForm extends Component {
   };
 
   _handleChange = (e, data) => {
-    //const { currentStep, scamsHistory } = this.state;
-    //const isResult = this._checkIsResult(data);
-    //console.log('data ', data);
-    //const scamsArray = this._addtoArray(scams, data);
-    this.setState({
-      ...this.state,
-      currentSelection: {
-        AnswerCode: data.AnswerCode,
-        NextStepId: data.NextStepId
-      }
-    });
+    const { checked } = e.target;
+    if(checked) {
+      this.setState({
+        currentSelection: {
+          AnswerCode: data.AnswerCode,
+          NextStepId: data.NextStepId
+        }
+      });
+    }
+    
   };
 
   _next = e => {
     const { currentSelection, scamsHistory } = this.state;
     let currentStep = this.state.currentStep + 1;
-    const isResult =
-      currentStep > 1 ? this._checkIsResult(currentSelection) : null;
+    const isResult = currentSelection ? this._checkIsResult(currentSelection) : null;
     //check if anything exist in currentSelection else
-
     if (isResult) {
       this.setState({
         ...this.state,
-        isResult: true
+        isResult: true,
+        currentStep: currentStep,
+        scamsHistory: [...scamsHistory, currentSelection],
+        currentSelection: null,
       });
     } else if (currentSelection) {
       this.setState({
         currentStep: currentStep,
-        scamsHistory: [...scamsHistory, currentSelection]
+        scamsHistory: [...scamsHistory, currentSelection],
+        currentSelection: null,
       });
     } else {
-      console.log("show Validation")
+      //console.log("show Validation")
     }
   };
 
   _prev = e => {
     const { scamsHistory } = this.state;
     let currentStep = this.state.currentStep - 1;
-    console.log("Hist", scamsHistory);
+    //console.log("Hist", scamsHistory);
+    
     this.setState({
       ...this.state,
       currentStep: currentStep,
@@ -111,6 +74,7 @@ class MultiStepForm extends Component {
         NextStepId: scamsHistory[currentStep].NextStepId
       }
     });
+    scamsHistory.pop();
   };
 
   render() {
@@ -138,7 +102,7 @@ class MultiStepForm extends Component {
       });
 
     const summary = isResult ? data['ResultSummary'].filter(
-      item => item.Id === currentSelection['NextStepId']
+      item => item.Id === scamsHistory[currentStep - 1]['NextStepId']
     )[0]: null;
     
 

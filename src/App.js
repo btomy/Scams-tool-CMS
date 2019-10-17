@@ -3,7 +3,7 @@ import MultiStepForm from "./MultiStepForm";
 
 import data from './scams.json';
 
-const API = 'https://hn.algolia.com/api/v1/search?query=';
+const API = 'https://epidev03.citizensadvice.org.uk/tools/autopop-scams-tool/?json=1';
 //Add api when UAT is ready
 const DEFAULT_QUERY = 'redux';
 
@@ -28,7 +28,7 @@ class App extends Component {
           throw new Error("Something went wrong ...");
         }
       })
-      .then(data => this.setState({ isLoading: false }))
+      .then(data => this.setState({ data, isLoading: false }))
       .catch(error => this.setState({ error, isLoading: false }));
   }
 

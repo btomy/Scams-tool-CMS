@@ -30,8 +30,9 @@ class ShowSummary extends Component{
           className="js-ref revealable__heading"
           data-action="toggle"
           aria-controls="revealable-1"
+          aria-expanded={showRevealable? true : false}
         >
-          If the repair didn’t work or it created a new problem
+          Lorem ipsum dolor sit amet
         </h2>
         <div
           className={`revealable__content ${slideHidden}`}

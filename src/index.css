@@ -2,14 +2,12 @@
 
 .progress{
     display: flex;
-    height: 1rem;
+    height: 1.8rem;
     overflow: hidden;
     font-size: .75rem;
-    background-color: #e9ecef;
+    background-color: #DCDCDC;
     border-radius: .25rem;
-}
-.bg-success{
-    background-color: #28a745!important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .progress-bar{
@@ -19,7 +17,7 @@
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: #007bff;
+    background-color: #1DB4AB;
     transition: width .6s ease;
 }
 
@@ -107,7 +105,7 @@
 }
 .App{
     width: 80%;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 .btn-wrapper{

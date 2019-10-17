@@ -10,9 +10,10 @@ const Answers = ({ results, currentSelection, handleChange }) => {
     const resultsBlock = results.map((result, id) => {
       return (
         <div className="input-wrapper"  key={id}>
-          <div className="checkbox">
+          <div className="">
+            <FormLabel htmlFor={result.AnswerCode} classNames="radio radio--block">
             <FormRadioCheck
-              type="checkbox"
+              type="radio"
               id={result.AnswerCode}
               name={result.AnswerCode}
               value={result.AnswerCode}
@@ -20,7 +21,6 @@ const Answers = ({ results, currentSelection, handleChange }) => {
               handleChange={e => handleChange(e, result)}
               classNames="input"
             />
-            <FormLabel htmlFor={result.AnswerCode} classNames="">
               {result.Answer}
             </FormLabel>
           </div>
