@@ -57,7 +57,7 @@ class ToolBar extends Component {
   }
 
   render() {
-    let isResult = this.props.isResult;
+    const { isResult } = this.props
     return (
       <React.Fragment>
         {isResult ? (
