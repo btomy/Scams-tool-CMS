@@ -29,7 +29,7 @@ class ToolBar extends Component {
 
   get nextButton() {
       return (
-        <Button className="button nxt-btn" click={this.props.next}>
+        <Button className="button nxt-btn" click={this.props.next} disabled={this.props.disabled}>
           Next
           <svg
             className="ml-2"

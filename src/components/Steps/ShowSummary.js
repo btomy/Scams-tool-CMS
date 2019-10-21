@@ -15,9 +15,11 @@ class ShowSummary extends Component{
   }
 
   render() {
+    
     const { showRevealable } = this.state;
     const slideHidden = showRevealable ? "" : "slide--hidden";
     const {summary} = this.props;
+    console.log(summary)
     return (
       <React.Fragment>
         <fieldset className="">
@@ -102,6 +104,11 @@ class ShowSummary extends Component{
           
         </div>
       </section>
+      <fieldset className="">
+          <h3 dangerouslySetInnerHTML={{ __html: summary.SecondResultTitle }}></h3>
+        <div dangerouslySetInnerHTML={{ __html: summary.SecondResultText }}></div>
+      </fieldset>
+
     </React.Fragment>
   );
   }
