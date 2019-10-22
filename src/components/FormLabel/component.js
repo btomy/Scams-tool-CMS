@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Label = ({ children, htmlFor, classNames, isOptional }) => {
   return (
@@ -10,3 +11,15 @@ const Label = ({ children, htmlFor, classNames, isOptional }) => {
 };
 
 export default Label;
+
+Label.defaultProps = {
+  htmlFor: "",
+  className: ""
+}
+
+Label.propTypes = {
+  htmlFor: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  value: PropTypes.any,
+  onChange: PropTypes.func.isRequired
+};
