@@ -21,9 +21,9 @@ const Steps = ({
         <ShowSummary summary={summary}/>
       ) : (
         <div>
-          <ProgressBar now={ProgressBarValue} label={`${ProgressBarValue}%`} /> 
+          <ProgressBar now={ProgressBarValue} /> 
           <QuestionBlock question={question} />
-          <fieldset className="">
+          <fieldset className="answer-block">
             <Answers
               results={results}
               currentSelection={currentSelection}

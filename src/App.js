@@ -3,7 +3,7 @@ import MultiStepForm from "./MultiStepForm";
 
 import data from './scams.json';
 
-const API = 'https://epidev03.citizensadvice.org.uk/tools/autopop1/?json=1';
+const API = 'https://epidev03.citizensadvice.org.uk/tools/scams-tool-3/?json=1';
 //Add api when UAT is ready
 const DEFAULT_QUERY = 'redux';
 
