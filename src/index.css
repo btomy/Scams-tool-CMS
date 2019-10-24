@@ -112,13 +112,12 @@
 }
 
 .answer-block{
-    border: 1px solid #000;
     margin: 2em 0 0;
-    padding: 1em 1em 2em;
+    padding: 0;
 }
 
 .btn-wrapper{
-    padding: 2rem 0 ;
+    padding: 2.5rem 0 0;
     display: flex ;
 }
 
@@ -194,6 +193,9 @@ input[type=checkbox]+label{
     width: 100%;
     z-index: -1;
     border: none;
+}
+.radio input:focus {
+    outline: none;
 }
 
 .radio input[type="radio"]:checked::before,.radio input[type="checkbox"]:checked::before,.checkbox input[type="radio"]:checked::before,.checkbox input[type="checkbox"]:checked::before {

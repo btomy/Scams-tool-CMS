@@ -111,7 +111,6 @@ class MultiStepForm extends Component {
       currentStep > 0 ? OtherQuestionAnswers[0] : FirstQuestionAnswers[0];
 
     const ProgressBarValue = data && Question[0] ? Question[0]["Percentage"] : null;
-    const BtnDisabledState = currentSelection == null ? true : false;
   
     return (
       <React.Fragment>
@@ -135,7 +134,6 @@ class MultiStepForm extends Component {
               previous= {this._prev}
               isResult= {isResult}
               restart={this.props.restart}
-              disabled= {BtnDisabledState}
             />
           </div>
         </form>
