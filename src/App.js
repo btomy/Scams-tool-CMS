@@ -1,17 +1,15 @@
 import React, {Component} from 'react'
+import axios from 'axios';
 import MultiStepForm from "./MultiStepForm";
-
-import data from './scams.json';
 
 const API = 'https://epidev03.citizensadvice.org.uk/tools/scams-tool-3/?json=1';
 //Add api when UAT is ready
-const DEFAULT_QUERY = 'redux';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data,
+      data: null,
       isLoading: false,
       error: null,
       startApp: false
@@ -20,16 +18,19 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch(API + DEFAULT_QUERY)
+    axios.get(API)
       .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Something went wrong ...");
-        }
+        this.setState({ 
+          data : response.data, 
+          isLoading: false 
+        })
       })
-      .then(data => this.setState({ data, isLoading: false }))
-      .catch(error => this.setState({ error, isLoading: false }));
+      .catch(error => 
+        this.setState({ 
+          error : error.response, 
+          isLoading: false 
+        })
+      );
   }
 
   _startApp = () => {
@@ -48,7 +49,7 @@ class App extends Component {
     const { data, isLoading, error, startApp } = this.state;
   
     if (error) {
-      return <p>{error.message}</p>;
+      return <p>{error.statusText}</p>;
     }
     if (isLoading) {
       return <p>Loading ...</p>;
@@ -60,8 +61,8 @@ class App extends Component {
           data && <MultiStepForm data={data} restart={this._reStartApp} />
         ) : (
           <React.Fragment>
-           <h1>{data.Title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: data.Introduction }}></div>
+           <h1>{ data && data.Title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: data && data.Introduction }}></div>
             <button onClick={this._startApp}>Start</button>
           </React.Fragment>
         )}

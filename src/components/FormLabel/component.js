@@ -20,6 +20,4 @@ Label.defaultProps = {
 Label.propTypes = {
   htmlFor: PropTypes.string.isRequired,
   className: PropTypes.string,
-  value: PropTypes.any,
-  onChange: PropTypes.func.isRequired
 };
